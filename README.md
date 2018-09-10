@@ -8,11 +8,11 @@
 
 <h2> 1. MemoApp(1) </h2>
 
-    Gemfile 추가 | gem 'bootstrap-sass', '~> 3.3.7'    <br>
-    application.scss | css 작성 - body, #logo  <br>
-    routes.rb 루트 추가 | root 'home#index' <br>
-    application.html.erb 작성 <br>
-    _header.html.erb | <%=render 'layouts/header'%> 로 옮기기 <br>
+    Gemfile 추가 | gem 'bootstrap-sass', '~> 3.3.7'    
+    application.scss | css 작성 - body, #logo  
+    routes.rb 루트 추가 | root 'home#index' 
+    application.html.erb 작성 
+    _header.html.erb | <%=render 'layouts/header'%> 로 옮기기
 
 <h2>2. MemoApp(2)</h2>
 
@@ -25,18 +25,17 @@
     _header에 sign in & up, Logout 조건문 작성
     Gemfile 추가 | gem 'devise-bootstrap-views' ==> 기존 views가 존재하면 안됨
     rails g devise:views:bootstrap_templates
-    
-    #rails g model Memo title:string content:text user:references
+    rails g model Memo title:string content:text user:references
     rake db:migrate
-    
-    #form_for 만들기
+        
+    form_for 만들기
     rails g controller memos index new create edit update destroy
     routes.rb | 추가 resources
     memo의 new.html.erb 작성
     Gemfile 추가 | gem 'bootstrap-form' new.html.erb에 bootstrap_form_for
     Gemfile 추가 | gem 'tinymce-rails'
     
-3. 
+<h2>3. MemoApp(3)</h2>
 
 
 4. 
