@@ -1,0 +1,18 @@
+<h1><%=@memo.title%></h1>
+<hr>
+<h2>by <%=@memo.user.email%></h2>
+<%=link_to '수정하기', edit_memo_path%>
+| <%=link_to '삭제하기', memo_path, method: 'delete'%>
+<hr>
+
+<%=@memo.content.html_safe%>
+<hr>
+
+<div class="well">
+    댓글 작성 창
+</div>
+
+<hr>
+<div>
+    댓글 나오는 곳
+</div>

@@ -1,2 +1,21 @@
-<h1>Memos#index</h1>
-<p>Find me in app/views/memos/index.html.erb</p>
+<h1>전체 글 목록</h1>
+<div class="table-responsive">
+    <table class="table table-fit">
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>user</th>
+                <th>comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%=@memos.each do |memo| %>
+            <tr>
+                <td><%=link_to(memo.title, memo_path(memo.id))%></td>
+                <td><%=memo.user.email%></td>
+                <td>100</td><br>
+            </tr>
+            <%end%>
+        </tbody>
+    </table>
+</div>
