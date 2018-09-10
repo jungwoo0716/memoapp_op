@@ -1,20 +1,20 @@
-@Git&Github
-    git init
-    git add README.md
-    git commit -m "first commit"
-    git remote add origin https://github.com/jungwoo0716/memoapp_op.git
-    git push -u origin master
+<h2>@Git&Github</h2>
+    git init<br>
+    git add README.md<br>
+    git commit -m "first commit"<br>
+    git remote add origin https://github.com/jungwoo0716/memoapp_op.git<br>
+    git push -u origin master<br>
     
 
-1. MemoApp(1)
+<h2> 1. MemoApp(1) </h2>
 
-    Gemfile 추가 | gem 'bootstrap-sass', '~> 3.3.7'    
-    application.scss | css 작성 - body, #logo 
-    routes.rb 루트 추가 | root 'home#index'
-    application.html.erb 작성
-    _header.html.erb | <%=render 'layouts/header'%> 로 옮기기
-    
-2. MemoApp(2)
+    Gemfile 추가 | gem 'bootstrap-sass', '~> 3.3.7'    <br>
+    application.scss | css 작성 - body, #logo  <br>
+    routes.rb 루트 추가 | root 'home#index' <br>
+    application.html.erb 작성 <br>
+    _header.html.erb | <%=render 'layouts/header'%> 로 옮기기 <br>
+
+<h2>2. MemoApp(2)</h2>
 
     Gemfile 추가 | gem 'devise'
     rails g devise:install
