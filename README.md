@@ -36,15 +36,14 @@
     Gemfile 추가 | gem 'tinymce-rails'
     
 <h2>3. MemoApp(3)</h2>
+
     memo의 new html에 hidden_field추가 (user id용)
     memos_controller에 def create 추가
     memos_controller에 def show 추가
     memo의 show html 추가
-    
     div.table-responsive>table.table.table-fit 이러고 Tab누르면 자동완성
-    
     routes.rb | root를 memo로 변경
     home controller 삭제 | rails d controller home
+    index.html 테이블 만들기
     
-
 4. 
