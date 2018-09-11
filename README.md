@@ -57,5 +57,21 @@
     memos_controller에 Private set_memo ==> "@memo = Memo.find(params[:id]) = set_memo"
     before_action :set_memo, only: [:show, :edit, :update, :destroy]
     private : memo_parmas추가 후 update, create 로 코드 약줄
+
+<h2>5. MemoApp(5)</h2>
+
+    memos_controller에 def is writer추가
+    Comment Model 만들기
+    rails g model comment content:string user:references memo:references
+    rails g controller comments create destroy
+    모델 관계/라우트 설정
+    memo.rb, user.rb : has_many :comments 추가
+    resources comments 추가
+    show.html.erb에 댓글나오는 창 추가
+    memos_controller에 show에 comment추가
+    comments_controller 구현
     
+<h2>6. MemoApp(6)</h2>
+
+    유효성 검사
     

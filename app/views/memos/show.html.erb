@@ -11,11 +11,31 @@
 <%=@memo.content.html_safe%>
 <hr>
 
-<div class="well">
-    댓글 작성 창
+<div class="card card-body bg-light">
+    <%if user_signed_in?%>
+    <%=bootstrap_form_for(@comment, url: memo_comments_path(@memo.id)) do |f|%>
+        <%=f.text_field :content, label: '내용'%>
+        <%=f.hidden_field :user_id, value: current_user.id%>
+        <%=f.hidden_field :memo_id, value: @memo.id%>
+        <%=f.submit '작성'%>
+    <%end%>
+    <%else%>
+    <%=link_to '댓글을 다시려면 로그인 해주세요!', new_user_session_path%>
+    <%end%>
 </div>
 
-<hr>
-<div>
-    댓글 나오는 곳
-</div>
+<hr />
+
+<%@comments.each do |c|%>
+        <div class="media">
+            <div class="media-body">
+                <div class="media-heading">
+                    <strong><%=c.user.email%></strong>
+                </div>
+                <%=c.content%>
+                <%if c.user == current_user%>
+                    <%=link_to '[x]', memo_comments_path(@memo, c.id), method: :delete%>
+                <%end%>
+            </div>
+        </div>
+<%end%>

@@ -1,7 +1,7 @@
 class MemosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_memo, only: [:show, :edit, :update, :destroy]
-  
+  before_action :is_writer?, only: [:edit, :update, :destroy]
   
   def index
     @memos = Memo.order(created_at: :DESC)
@@ -19,7 +19,8 @@ class MemosController < ApplicationController
   end
 
   def show
-    
+    @comment = Comment.new
+    @comments = Comment.all
   end
 
   def edit
@@ -45,6 +46,10 @@ class MemosController < ApplicationController
   
   def memo_params
     params.require(:memo).permit(:user_id, :title, :content)
+  end
+  
+  def is_writer? # edit/update/destroy
+    redirect_to @memo unless @memo.user == current_user
   end
   
 end

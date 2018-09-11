@@ -1,3 +1,4 @@
+<div class="card card-body bg-light">
 <%=bootstrap_form_for @memo do |f|%>
     <%=f.hidden_field :user_id, value: current_user.id %>
     <%=f.text_field :title, label:'제목'%><br>
@@ -6,3 +7,4 @@
     <%= tinymce %>
     <%=f.submit '작성'%><br>
 <%end%>
+</div>
