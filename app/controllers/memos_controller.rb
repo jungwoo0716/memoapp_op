@@ -20,7 +20,7 @@ class MemosController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = Comment.all
+    @comments = @memo.comments
   end
 
   def edit

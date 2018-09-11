@@ -10,6 +10,10 @@
 <body>
   <%=render 'layouts/header'%>
   <div class='container'>
+    <% flash.each do |msg_type, msg| %>
+      <% type = boostrap_msg(msg_type)%>
+      <%=content_tag(:div, msg, class: ['alert', "alert-#{type}"])%>
+    <%end%>
     <%= yield %>    
   </div>
 

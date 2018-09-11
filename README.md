@@ -73,5 +73,12 @@
     
 <h2>6. MemoApp(6)</h2>
 
-    유효성 검사
+    유효성 검사 - validates
+    validates - memo.rb, comment.rb 추가
+    application.html.erb에 flash 추가
+    <% type = boostrap_msg(msg_type)%> ==> boostrap_msg를 application_helper.rb에 def 추가
+    <%=content_tag(:div, msg, class: ['alert', "alert-#{type}"])%>
+
+<h2>7. MemoApp(7)</h2>
+
     
