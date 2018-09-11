@@ -81,4 +81,12 @@
 
 <h2>7. MemoApp(7)</h2>
 
+    i18n통한 국제화 구현
+    Gemfile 추가 | gem 'rails-i18n'
+    Gemfile 추가 | gem 'devise-i18n'
+    rails g devise:i18n:locale ko
+    config파일의 application.rb의 workspace에서 config.1i8n.default_locale=:ko 추가
+    없는 메세지가 있으면, devise.views.ko.yml에서 추가
     
+<h2>8. MemoApp 추가 보완 사항 </h2>
+

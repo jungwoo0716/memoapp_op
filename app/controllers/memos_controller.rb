@@ -13,9 +13,14 @@ class MemosController < ApplicationController
 
   def create
     @memo = Memo.new(memo_params)
-    @memo.save
-    # redirect_to memo_path(@memo)
-    redirect_to @memo
+    
+    if @memo.save
+      flash[:notice] = "게시물이 성공적으로 작성되었습니다"
+      redirect_to @memo
+    else
+      flash[:alert] = "게시물을 작성할 수 없습니다."
+      render :new
+    end
   end
 
   def show
@@ -28,10 +33,13 @@ class MemosController < ApplicationController
   end
 
   def update
-    @memo.update(memo_params)
-    
-    # redirect_to memo_path(@memo)
+    if @memo.update(memo_params)
+    flash[:notice] = "게시물이 성공적으로 수정되었습니다"
     redirect_to @memo
+    else
+      flash[:alert] = "게시물이 성공적으로 수정될 수 없습니다"
+      render :edit
+    end
   end
 
   def destroy
