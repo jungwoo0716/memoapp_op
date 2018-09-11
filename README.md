@@ -46,4 +46,16 @@
     home controller 삭제 | rails d controller home
     index.html 테이블 만들기
     
-4. 
+<h2>4. MemoApp(4)</h2>
+
+    memos_controller에 def edit 추가
+    edit.html 코드 작성
+    form_html.erb 만들기 (중복 코드 없애기)
+    memos_controller에 def update 추가
+    memos_controller에 def destroy 추가
+    memos_controller에 글을 쓴 사람만 볼 수 있게 추가
+    memos_controller에 Private set_memo ==> "@memo = Memo.find(params[:id]) = set_memo"
+    before_action :set_memo, only: [:show, :edit, :update, :destroy]
+    private : memo_parmas추가 후 update, create 로 코드 약줄
+    
+    

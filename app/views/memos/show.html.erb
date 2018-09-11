@@ -1,8 +1,11 @@
 <h1><%=@memo.title%></h1>
 <hr>
 <h2>by <%=@memo.user.email%></h2>
+
+<%if @memo.user == current_user %>
 <%=link_to '수정하기', edit_memo_path%>
 | <%=link_to '삭제하기', memo_path, method: 'delete'%>
+<%end%>
 <hr>
 
 <%=@memo.content.html_safe%>
